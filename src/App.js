@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from "react";
+import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+import Home  from "./components/Home";
+const client = new ApolloClient({
+  uri: "https://3f31-103-113-190-50.in.ngrok.io/v1/graphql",
+  cache: new InMemoryCache()
+  
+});
+function App(){
+  return(
+    
+  <ApolloProvider client={client}>
+  <Home />
+  </ApolloProvider>
+  
+);
 }
-
 export default App;
+
