@@ -17,10 +17,13 @@ if (loading) return "Loading...";
   if (error) return <pre>{error.message}</pre>;
   return (
     <div>
-      <h1>SpaceX Launches</h1>
+      <h1>SLASH DR</h1>
       <ul>
         {data.users.map((item) => (
-          <li key={item.id}>{item.username}</li>
+            <div>
+          <li key={item.id}>{item.username}-  {item.age}</li>
+        
+          </div>
         ))}
       </ul>
     </div>
